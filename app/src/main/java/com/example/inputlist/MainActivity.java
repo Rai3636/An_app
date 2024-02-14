@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -25,17 +26,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.submitBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] wordsArray = Objects.requireNonNull(inputString.getText()).toString().split(",");
-                ArrayList<String> data = new ArrayList<>(Arrays.asList(wordsArray));
+                String str = Objects.requireNonNull(inputString.getText()).toString();
+                Intent intent = new Intent(MainActivity.this, SecondScreen.class);
+                intent.putExtra("data",str);
+                startActivity(intent);
 
-                if(!data.isEmpty()){
-                    WordAdapter adapter = new WordAdapter(data);
-                    recyclerView.setAdapter(adapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                }
-                else {
-                    recyclerView.setVisibility(View.GONE);
-                }
             }
         });
 

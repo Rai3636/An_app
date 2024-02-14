@@ -54,6 +54,7 @@
         android:text="@string/go"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="invisible"
         android:id="@+id/recylerView"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
