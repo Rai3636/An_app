@@ -28,13 +28,13 @@ public class SecondScreen extends AppCompatActivity {
 
         ArrayList<String> data = new ArrayList<>(Arrays.asList(wordsArray));
 
-        if(!data.isEmpty()){
+        if (!data.isEmpty()) {
             WordAdapter adapter = new WordAdapter(data);
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(SecondScreen.this));
-        }
-        else {
+        } else {
             recyclerView.setVisibility(View.GONE);
         }
     }
 }
+//this is second
